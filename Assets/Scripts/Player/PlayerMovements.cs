@@ -51,9 +51,9 @@ public class PlayerMovements : MonoBehaviour
         }
         // ----------- Fall -----------
         velocity.y += gravity * Time.deltaTime;
-        if (!isGrounded && velocity.y < -10f)
+        if (!isGrounded && velocity.y < -5f)
         {
-            velocity.y = -10f;
+            velocity.y = -5f;
         }
 
         // ----------- Player Jump -----------
