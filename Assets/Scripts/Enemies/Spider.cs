@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +7,9 @@ public class Spider : MonoBehaviour
     public Transform player;
     public LayerMask groundLayer, playerLayer;
     private Animator animator;
+    private float attackTimer;
+    private bool isDead = false;
+    public GameObject hitbox;
 
     // ----------- Patroling -----------
     public Vector3 walkPoint;
@@ -31,6 +33,9 @@ public class Spider : MonoBehaviour
 
     private void Update()
     {
+        // ----------- If spider is ded, IT DOES NOT GET UP -----------
+        if (isDead) return;
+
         // ----------- Check if player is in sight and in range -----------
         inSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         inRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
@@ -88,19 +93,42 @@ public class Spider : MonoBehaviour
             transform.rotation = rot;
         }
 
-        if (!hasAttacked)
-        {
-            animator.SetTrigger("Attack");
-            //attack code here
+        attackTimer += Time.deltaTime;
+        //attack code here
 
-            hasAttacked = true;
-            Invoke(nameof(ResetAttack), attackIntervals);
-        }
+        if (attackTimer >= attackIntervals)
+            {
+                animator.SetTrigger("Attack");
+                attackTimer = 0f;
+            }
     }
 
-    private void ResetAttack()
+    public void Die()
     {
-        hasAttacked = false;
+        // ----------- Stop every process when ded and fire animation + SFX -----------
+        if (isDead) return;
+        isDead = true;
+        agent.enabled = false;
+        hitbox.SetActive(false);
+
+        animator.SetTrigger("Dead");
+        AudioManager.instance.PlaySFX(AudioManager.instance.spiderSlain);
+    }
+
+    // ----------- Setup for Animation Events -----------
+    public void EnableHitbox()
+    {
+        hitbox.SetActive(true);
+    }
+
+    public void DisableHitbox()
+    {
+        hitbox.SetActive(false);
+    }
+
+    public void PlayAttackSFX()
+    {
+        AudioManager.instance.PlaySFX(AudioManager.instance.spiderAttack);
     }
 
 }
