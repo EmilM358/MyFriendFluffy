@@ -5,8 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sandbox.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/1 First Room.unity
+    guid: c53621fdb6efeeb4a9d85a4f2b4eba32
+  - enabled: 1
+    path: Assets/Scenes/2 Second Open Space.unity
+    guid: cd8a8dd652d1cd84d864a38be3919c97
+  - enabled: 1
+    path: Assets/Scenes/3 Tower Room 1.unity
+    guid: bdae9528df0cb664f95121f2ef8d2113
+  - enabled: 1
+    path: Assets/Scenes/4 Tower Room 2.unity
+    guid: 826820af6866d104997b16a691757176
+  - enabled: 1
+    path: Assets/Scenes/5 Tower Room 3.unity
+    guid: 33ef362af83d7d34482c400862e9ddde
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
