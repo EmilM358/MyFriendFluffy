@@ -2973,6 +2973,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3606874439742668047, guid: 2fd798ecacfa1f3478a21db51b90bd64, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606874439742668047, guid: 2fd798ecacfa1f3478a21db51b90bd64, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606874439742668047, guid: 2fd798ecacfa1f3478a21db51b90bd64, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606874439742668047, guid: 2fd798ecacfa1f3478a21db51b90bd64, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606874439742668047, guid: 2fd798ecacfa1f3478a21db51b90bd64, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 206
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606874439742668047, guid: 2fd798ecacfa1f3478a21db51b90bd64, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 66
+      objectReference: {fileID: 0}
     - target: {fileID: 7364728163191537998, guid: 2fd798ecacfa1f3478a21db51b90bd64, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4574,6 +4598,10 @@ PrefabInstance:
     - target: {fileID: 1559058455185595042, guid: bc8203b1808fcc4448581f10f5089c86, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165427246555886048, guid: bc8203b1808fcc4448581f10f5089c86, type: 3}
+      propertyPath: mouseSensitivity
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8163540772250306818, guid: bc8203b1808fcc4448581f10f5089c86, type: 3}
       propertyPath: m_LocalPosition.x
