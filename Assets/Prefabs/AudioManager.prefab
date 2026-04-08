@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6878708649578069433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 154336843011340104}
+  - component: {fileID: 1171889394383268021}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &154336843011340104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878708649578069433}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.48876, y: 1.10455, z: 10.05568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171889394383268021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878708649578069433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd07bd3db96c68c47b05f7b56983f203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sfxSource: {fileID: 0}
+  musicSource: {fileID: 0}
+  jump: {fileID: 0}
+  land: {fileID: 0}
+  hurt: {fileID: 0}
+  steps: {fileID: 0}
+  door: {fileID: 0}
+  sword: {fileID: 8300000, guid: ac78ce6bfd48fe74992208cca075e8b9, type: 3}
+  gun: {fileID: 8300000, guid: 2203773368e4340d98c114f55c2dd7fd, type: 3}
+  spiderAttack: {fileID: 8300000, guid: 3f3eda9353f618c4fa6744ea93428470, type: 3}
+  spiderSlain: {fileID: 8300000, guid: ad0d4b2f9eb71234f8b524d589ad5e54, type: 3}
+  skeletonAttack: {fileID: 0}
+  skeletonSlain: {fileID: 0}
+  outsideMusic: {fileID: 0}
+  towerMusic: {fileID: 0}
+  bossMusic: {fileID: 0}
+  musicVolume: 0.3
+  sfxCooldown: 0.1
+  sfxVolume: 0.1
