@@ -11,6 +11,8 @@ public class FluffyMovements : MonoBehaviour
     public float safeDistanceFromSpiders = 6f;
     private Transform closestSpider;
 
+    float footstepTimer;
+    bool isMoving;
     private NavMeshAgent agent;
     private Animator animator;
 
@@ -35,6 +37,7 @@ public class FluffyMovements : MonoBehaviour
         }
 
         UpdateAnimation();
+        Footsteps();
     }
 
     void FindClosestSpider()
@@ -102,14 +105,28 @@ public class FluffyMovements : MonoBehaviour
     {
         // ----------- Check if should be walking or idling -----------
         float speed = agent.velocity.magnitude;
+        isMoving = speed > 0.1f;
+        animator.SetBool("isWalking", isMoving);
+    }
 
-        if (speed > 0.1f)
+    void Footsteps()
+    {
+        // ----------- If SFX should play or not for footsteps -----------
+        if (AudioManager.instance == null) return;
+
+        if (isMoving && agent.isOnNavMesh)
         {
-            animator.SetBool("isWalking", true);
+            footstepTimer -= Time.deltaTime;
+
+            if (footstepTimer <= 0f)
+            {
+                AudioManager.instance.PlayFluffyFootstep();
+            }
         }
         else
         {
-            animator.SetBool("isWalking", false);
+            footstepTimer = 0f;
         }
     }
 }
+

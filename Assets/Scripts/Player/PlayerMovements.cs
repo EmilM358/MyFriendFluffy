@@ -18,6 +18,7 @@ public class PlayerMovements : MonoBehaviour
     bool isGrounded;
     bool isMoving;
     private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
+    float footstepTimer;
 
     void Start()
     {
@@ -69,5 +70,29 @@ public class PlayerMovements : MonoBehaviour
             isMoving = false;
         }
         lastPosition = gameObject.transform.position;
+
+        // ----------- Play Footsteps SFX -----------
+        Footsteps();
+    }
+    void Footsteps()
+    {
+        // ----------- safety -----------
+        if (AudioManager.instance == null) return;
+
+        // ----------- Plasy sfx if grounded and moving -----------
+        if (isMoving && isGrounded)
+        {
+            footstepTimer -= Time.deltaTime;
+
+            if (footstepTimer <= 0f)
+            {
+                AudioManager.instance.PlayPlayerFootstep();
+                footstepTimer = AudioManager.instance.playerStepInterval;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
     }
 }

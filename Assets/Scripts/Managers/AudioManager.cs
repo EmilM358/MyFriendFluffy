@@ -25,9 +25,19 @@ public class AudioManager : MonoBehaviour
     public AudioClip spiderAttack;
     public AudioClip spiderSlain;
 
-    [Header("Skeleton SFX")] // I put skeleton as a placeholder enemy type
-    public AudioClip skeletonAttack;
-    public AudioClip skeletonSlain;
+    [Header("Player Footsteps")]
+    public List<AudioClip> playerSteps;
+
+    [Header("Fluffy Footsteps")]
+    public AudioClip fluffyStep;
+    [Range(0.5f, 1.5f)] public float fluffyPitchMin = 0.9f;
+    [Range(0.5f, 1.5f)] public float fluffyPitchMax = 1.1f;
+
+    [Header("Footstep Timing")]
+    public float playerStepInterval = 0.5f;
+    public float fluffyStepInterval = 0.4f;
+    float lastPlayerStepTime;
+    float lastFluffyStepTime;
 
     [Header("Music")]
     public AudioClip outsideMusic;
@@ -84,20 +94,33 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip, sfxVolume);
         lastPlayedTime[clip] = Time.time;
     }
-    public void StartBossMusic()
+
+    public void PlayPlayerFootstep()
     {
-        if (bossMusic == null || musicSource == null) return;
-        musicSource.clip = bossMusic;
-        musicSource.loop = true;
-        musicSource.Play();
+        if (playerSteps == null || playerSteps.Count == 0) return;
+
+        if (Time.time - lastPlayerStepTime < playerStepInterval)
+            return;
+
+        AudioClip clip = playerSteps[Random.Range(0, playerSteps.Count)];
+        PlaySFX(clip, sfxCooldown);
+
+        lastPlayerStepTime = Time.time;
     }
 
-    public void ReturnToLevelMusic()
+    public void PlayFluffyFootstep()
     {
-        if (outsideMusic == null || musicSource == null) return;
-        musicSource.clip = outsideMusic;
-        musicSource.loop = true;
-        musicSource.Play();
-    }
+        if (fluffyStep == null || sfxSource == null) return;
 
+        if (Time.time - lastFluffyStepTime < fluffyStepInterval)
+            return;
+
+        float randomPitch = Random.Range(fluffyPitchMin, fluffyPitchMax);
+        sfxSource.pitch = randomPitch;
+
+        sfxSource.PlayOneShot(fluffyStep, sfxVolume);
+
+        sfxSource.pitch = 1f;
+        lastFluffyStepTime = Time.time;
+    }
 }
