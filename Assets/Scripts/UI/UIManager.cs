@@ -2,14 +2,14 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
-    public event Action<float> OnHealthChanged;
 
     public Slider healthBar;
     //public Slider staminaBar;
-    public TextMeshPro ammoCounter;
+    //public TextMeshPro ammoCounter;
 
     [SerializeField] private int maxHealth;
     private void Start()
