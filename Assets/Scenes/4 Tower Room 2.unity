@@ -1069,6 +1069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8887820486734653612, guid: a6a5a26c621984843be9d14d80bd9f02, type: 3}
+      propertyPath: startingWeapon
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2388,7 +2392,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.418
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

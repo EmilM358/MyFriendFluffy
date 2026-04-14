@@ -8,6 +8,8 @@ public class TitleScreen : MonoBehaviour
     private void Awake()
     {
         settings.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Play()

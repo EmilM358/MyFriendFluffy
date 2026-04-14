@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("oh no");
-        // death screen
+        SceneManager.LoadScene("DeathScene");
     }
 
     [ContextMenu("Test: Take 10 Damage")]
