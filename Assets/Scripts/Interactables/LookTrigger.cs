@@ -6,7 +6,7 @@ public class LookTrigger : MonoBehaviour
     public string targetTag = "Target"; 
     private bool hasTriggered = false;
 
-    public AudioSource FluffyIntro;
+    public AudioSource Scene1Clip1;
 
     void Update()
     {
@@ -38,9 +38,9 @@ public class LookTrigger : MonoBehaviour
         {
             audio.Play();
         }
-        if (FluffyIntro != null)
+        if (Scene1Clip1 != null)
         {
-            FluffyIntro.Stop();
+            Scene1Clip1.Stop();
         }
 }
 }
